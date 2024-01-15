@@ -73,7 +73,6 @@ class VideoController extends Controller
 
       // Validate and update video
       try {
-      if ($user->role === 'admin') {
         $videos = Videos::where('id',$video_id)->first();
         if(!$videos)
        { 
@@ -96,11 +95,27 @@ class VideoController extends Controller
         return response()->json([
          'message' => 'Video Updated successfully',
          'data' => $videos], 201);
-         }
+        
     } catch (\Exception $e) {
         Log::error($e->getMessage());
         return response()->json([ 'message' => 'Something happed while Updating Videos!'], 501);
     }
+    }
+      public function getFeaturedVideo($video_status)
+    {
+        try {
+            $featuredVideos = Videos::where('video_status', $video_status)->get();
+
+            if ($featuredVideos->count()) {
+                return response()->json(['data' => $featuredVideos], 201);          
+                }
+            
+                return response()->json(['message' => 'No featured video found'], 201);
+
+        } catch (\Exception $e) {
+            Log::error('error occurred: ' . $e->getMessage());
+            return response()->json(['message' => 'something happened while trying to get featured video'], 500);
+        }
     }
 
 }

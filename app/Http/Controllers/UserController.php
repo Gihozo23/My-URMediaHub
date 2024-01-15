@@ -20,7 +20,7 @@ class UserController extends Controller
     {
         $this->middleware('auth:api', ['except' => ['login', 'register']]);
     }
-    public function createUser(Request $request)
+    public function register(Request $request)
     {
         try {
             $validator = Validator::make($request->all(), [

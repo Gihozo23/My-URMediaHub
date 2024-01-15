@@ -19,18 +19,24 @@ use App\Http\Controllers\VideoController;
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
-// Route::group(['middleware' => 'api', 'prefix' => 'auth'], function () {
-Route::group(['middleware' => ['api', 'auth'], 'prefix' => 'auth'], function () {
-    Route::post('/register', [UserController::class, 'createUser']);
-    Route::post('/login', [UserController::class, 'login']);
-    // Route::get('/getAllUser', [UserController::class, 'getAllUser']);
 
-    // VIDEO UPLOAD ROUTES
+//  ROUTES for ALL USERS
+
+Route::group(['middleware' => 'api', 'prefix' => 'auth'], function () {
+    Route::post('/register', [UserController::class, 'register']);
+    Route::post('/login', [UserController::class, 'login']);
+    Route::get('/getFeaturedVideo/{video_status}', [VideoController::class, 'getFeaturedVideo']);
     Route::post('/video-upload', [VideoController::class, 'uploadVideo']);
-    Route::get('/getAllVideos', [VideoController::class, 'getAllVideos']);
-    Route::put('/updateVideoStatus/{id}', [VideoController::class, 'updateVideoStatus']);
-    Route::delete('/deleteImage/{id}', [VideoController::class, 'deleteVideo']);
+
+});
+Route::group(['middleware' => ['api', 'auth'], 'prefix' => 'auth'], function () {
+   
+
+          //  ROUTES for AUTHANTICATED USER
+
     
+
+
         //==============================================================================               
 
     /** ROUTE ONLY FOR ADMIN  */
@@ -40,6 +46,8 @@ Route::group(['middleware' => ['api', 'auth'], 'prefix' => 'auth'], function () 
     Route::group(['middleware' => 'admin'], function () {
         Route::get('/getAllUser', [UserController::class, 'getAllUser']);
         Route::put('/updateVideoStatus/{id}', [VideoController::class, 'updateVideoStatus']);
+        Route::get('/getAllVideos', [VideoController::class, 'getAllVideos']);
+        Route::delete('/deleteImage/{id}', [VideoController::class, 'deleteVideo']);
     });
 
 //=====================================  ADIMIN ZONE  ENDs ================================================================
