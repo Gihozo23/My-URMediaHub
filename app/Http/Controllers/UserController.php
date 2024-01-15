@@ -2,16 +2,24 @@
 
 namespace App\Http\Controllers;
 
+use JWTAuth;
 use App\Models\User;
+// use Tymon\JWTAuth\Facades\JWTAuth;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Auth;
+// use Tymon\JWTAuth\Facades\JWTAuth;
+use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
+use Tymon\JWTAuth\Exceptions\JWTException;
+
 
 class UserController extends Controller
 {
-
+    public function __construct()
+    {
+        $this->middleware('auth:api', ['except' => ['login', 'register']]);
+    }
     public function createUser(Request $request)
     {
         try {
@@ -57,26 +65,10 @@ class UserController extends Controller
             if ($validator->fails()) {
                 return response()->json($validator->errors(), 422);
             }
-            $token = null;
-            // Attempt to log in the user
-            if(auth()->attempt($validator->validated())) {
-
-                $token = auth()->user()->createToken('API Token')->plainTextToken;
-              
-                return $this->createNewToken($token);
-              
-              } else {
-            // if (!$token = auth()->attempt($validator->validated())) {
+            if (!$token = auth()->attempt($validator->validated())) {
                 return response()->json(['error' => 'Unauthorized'], 401);
             }
-            // return response()->json([
-            //     'access_token' => $token,
-            //     // auth()->guard()->factory()->getTTL() * 60,
-            //     // 'user' => auth()->user()
-                
-            // ], 201);
-
-            // return $this->createNewToken($token);
+            return $this->createNewToken($token);
         } catch (\Exception $e) {
             // Handle any errors that occur
             Log::error($e->getMessage());
@@ -90,11 +82,7 @@ class UserController extends Controller
             return response()->json([
                 'access_token' => $token,
                 'token_type' => 'bearer',
-                // 'expires_in' => auth()->make()->getTTL() * 4320,
-                // 'expires_in' => auth()->factory()->getTTL() * 60,
-                // auth()->guard()->factory()->getTTL() * 60,
-                'user' => auth()->user()
-                
+                'expires_in' => auth()->factory()->getTTL() * 60
             ], 201);
         } catch (\Exception $e) {
             // Handle any errors that occur
@@ -102,19 +90,49 @@ class UserController extends Controller
             return response(['message' => 'An error occurred while creating token for user user login in createNewToken.'], 500);
         }
     }
-    public function getAllUser(Request  $request)
+    public function logout()
     {
-        try {
-           
-            $user = User::All();
-            if ($user->count() > 0) {
-                return $user;
-            }
+        auth()->logout();
 
-            return response()->json(['message' => 'no records found'], 404);
-        } catch (\Exception $e) {
-            Log::error($e->getMessage());
-            return response(['message' => 'An error occurred while fetching All users.'], 501);
-        }
+        return response()->json(['message' => 'User successfully logged out.']);
     }
+    // public function getAllUser(Request  $request)
+    // {
+    //     $user = Auth::user();
+
+    //     try {
+    //         if ($user->role === 'admin') {
+    //         $user = User::All();
+    //         if ($user->count() > 0) {
+    //             return $user;
+    //         }
+    //     }
+    //         return response()->json(['message' => 'no records found'], 404);
+    //     } catch (\Exception $e) {
+    //         Log::error($e->getMessage());
+    //         return response(['message' => 'An error occurred while fetching All users.'], 501);
+    //     }
+    // }
+    public function getAllUser(Request $request)
+{
+    try {
+        $user = Auth::user();
+
+        if ($user->role !== 'admin') {
+            return response()->json(['message' => 'Unauthorized'], 401);
+        }
+
+        $users = User::all();
+
+        if ($users->count() > 0) {
+            return $users;
+        } else {
+            return response()->json(['message' => 'No records found'], 404);
+        }
+    } catch (JWTException $e) {
+        Log::error($e->getMessage());
+        return response(['message' => 'An error occurred while fetching all users.'], 500);
+    }
+}
+
 }

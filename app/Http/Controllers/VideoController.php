@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Videos;
 use Illuminate\Http\Request;
+use Tymon\JWTAuth\Facades\JWTAuth;
 use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Validator;
 
@@ -68,8 +69,11 @@ class VideoController extends Controller
     }
     public function updateVideoStatus(Request $request,$video_id)
     {
+        $user = JWTAuth::parseToken()->authenticate();
+
       // Validate and update video
       try {
+      if ($user->role === 'admin') {
         $videos = Videos::where('id',$video_id)->first();
         if(!$videos)
        { 
@@ -92,11 +96,11 @@ class VideoController extends Controller
         return response()->json([
          'message' => 'Video Updated successfully',
          'data' => $videos], 201);
+         }
     } catch (\Exception $e) {
         Log::error($e->getMessage());
         return response()->json([ 'message' => 'Something happed while Updating Videos!'], 501);
     }
     }
 
-    
 }
