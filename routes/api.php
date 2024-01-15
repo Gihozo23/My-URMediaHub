@@ -3,6 +3,7 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\VideoController;
 
 /*
 |--------------------------------------------------------------------------
@@ -22,5 +23,10 @@ Route::group(['middleware' => 'api', 'prefix' => 'auth'], function () {
     Route::post('/createUser', [UserController::class, 'createUser']);
     Route::post('/userLogin', [UserController::class, 'login']);
     Route::get('/getAllUser', [UserController::class, 'getAllUser']);
+
+    // VIDEO UPLOAD ROUTES
+    Route::post('/video-upload', [VideoController::class, 'uploadVideo']);
+    Route::get('/getAllVideos', [VideoController::class, 'getAllVideos']);
+    Route::delete('/deleteImage/{id}', [VideoController::class, 'deleteVideo']);
 
 });
