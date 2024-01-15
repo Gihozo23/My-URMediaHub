@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Videos;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Log;
+use Illuminate\Support\Facades\Validator;
 
 class VideoController extends Controller
 {
@@ -65,5 +66,37 @@ class VideoController extends Controller
             return response(['message' => 'An error occurred while fetching All videos.'], 501);
         }
     }
+    public function updateVideoStatus(Request $request,$video_id)
+    {
+      // Validate and update video
+      try {
+        $videos = Videos::where('id',$video_id)->first();
+        if(!$videos)
+       { 
+        return response()->json(['message' => 'not video found!']);
+        }
+        $validator = Validator::make($request->all(), [
+                
+                'video_status' => 'required|string',
+           
+        ]);
+
+        if ($validator->fails()) {
+            return response()->json(['error' => $validator->errors()], 422);
+        }
+        // Update Video
+        $videos->update([
+       
+                'video_status' => $request->input('video_status'),
+        ]);
+        return response()->json([
+         'message' => 'Video Updated successfully',
+         'data' => $videos], 201);
+    } catch (\Exception $e) {
+        Log::error($e->getMessage());
+        return response()->json([ 'message' => 'Something happed while Updating Videos!'], 501);
+    }
+    }
+
     
 }

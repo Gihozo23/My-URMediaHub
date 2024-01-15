@@ -27,6 +27,21 @@ Route::group(['middleware' => 'api', 'prefix' => 'auth'], function () {
     // VIDEO UPLOAD ROUTES
     Route::post('/video-upload', [VideoController::class, 'uploadVideo']);
     Route::get('/getAllVideos', [VideoController::class, 'getAllVideos']);
+    Route::put('/updateVideoStatus/{id}', [VideoController::class, 'updateVideoStatus']);
     Route::delete('/deleteImage/{id}', [VideoController::class, 'deleteVideo']);
+    
+        //==============================================================================               
+
+    /** ROUTE ONLY FOR ADMIN  */
+
+    //================================================================================
+
+    Route::group(['middleware' => 'admin'], function () {
+
+
+    });
+
+//=====================================  ADIMIN ZONE  ENDs ================================================================
+
 
 });
