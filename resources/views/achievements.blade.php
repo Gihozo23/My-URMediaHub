@@ -242,7 +242,6 @@
     <!-- Courses End -->
 
 
-    <!-- Testimonial Start -->
     <div class="container-xxl py-5 wow fadeInUp" data-wow-delay="0.1s">
         <div class="container">
             <div class="text-center">
@@ -251,35 +250,35 @@
             </div>
             <div class="owl-carousel testimonial-carousel position-relative">
                 <div class="testimonial-item text-center">
-                    <img class="border rounded-circle p-2 mx-auto mb-3" src="{{asset('img/testimonial-1.jpg')}}" style="width: 80px; height: 80px;">
-                    <h5 class="mb-0">Client Name</h5>
-                    <p>Profession</p>
+                    <img class="border rounded-circle p-2 mx-auto mb-3" src="{{asset('img/1stud.jpg')}}" style="width: 80px; height: 80px;">
+                    <h5 class="mb-0">Hirwa</h5>
+                    <p>Student</p>
                     <div class="testimonial-text bg-light text-center p-4">
-                    <p class="mb-0">Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit diam amet diam et eos. Clita erat ipsum et lorem et sit.</p>
+                    <p class="mb-0">The recognition gained not only elevated their profile but also led to exciting career opportunities, proving that dedication to one's craft can pave the way for success..</p>
                     </div>
                 </div>
                 <div class="testimonial-item text-center">
-                    <img class="border rounded-circle p-2 mx-auto mb-3" src="{{asset('img/testimonial-2.jpg')}}" style="width: 80px; height: 80px;">
-                    <h5 class="mb-0">Client Name</h5>
-                    <p>Profession</p>
+                    <img class="border rounded-circle p-2 mx-auto mb-3" src="{{asset('img/2stud.jpg')}}" style="width: 80px; height: 80px;">
+                    <h5 class="mb-0">Mark</h5>
+                    <p>Student</p>
                     <div class="testimonial-text bg-light text-center p-4">
-                    <p class="mb-0">Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit diam amet diam et eos. Clita erat ipsum et lorem et sit.</p>
+                    <p class="mb-0"></p>  The gaming community became a stepping stone for my professional network, resulting in unexpected opportunities within the gaming industry.</p>
                     </div>
                 </div>
                 <div class="testimonial-item text-center">
-                    <img class="border rounded-circle p-2 mx-auto mb-3" src="{{asset('img/testimonial-3.jpg')}}" style="width: 80px; height: 80px;">
-                    <h5 class="mb-0">Client Name</h5>
-                    <p>Profession</p>
+                    <img class="border rounded-circle p-2 mx-auto mb-3" src="{{asset('img/3stud.jpg')}}" style="width: 80px; height: 80px;">
+                    <h5 class="mb-0">Kwizera</h5>
+                    <p>Student</p>
                     <div class="testimonial-text bg-light text-center p-4">
-                    <p class="mb-0">Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit diam amet diam et eos. Clita erat ipsum et lorem et sit.</p>
+                    <p class="mb-0"> The experiences gained became a catalyst for personal and professional development.</p>
                     </div>
                 </div>
                 <div class="testimonial-item text-center">
-                    <img class="border rounded-circle p-2 mx-auto mb-3" src="{{asset('img/testimonial-4.jpg')}}" style="width: 80px; height: 80px;">
-                    <h5 class="mb-0">Client Name</h5>
-                    <p>Profession</p>
+                    <img class="border rounded-circle p-2 mx-auto mb-3" src="{{asset('img/4stud.jpg')}}" style="width: 80px; height: 80px;">
+                    <h5 class="mb-0">Stella</h5>
+                    <p>Student</p>
                     <div class="testimonial-text bg-light text-center p-4">
-                    <p class="mb-0">Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit diam amet diam et eos. Clita erat ipsum et lorem et sit.</p>
+                    <p class="mb-0"> I found more than just a platform to share experiences. The diverse skills shared opened doors to collaborative projects and industry exposure.</p>
                     </div>
                 </div>
             </div>
