@@ -206,11 +206,12 @@
                   </div>
                   <div class="col-md-6">
                     <div class="form-floating">
-                      <select
+                      <input
+                        type="text"
                         class="form-control"
                         id="title"
-                        aria-label="Content Title"
-                      </>
+                        placeholder="Content Title"
+                      />
                       <label for="title">Content Title</label>
                     </div>
                   </div>
@@ -243,6 +244,21 @@
                   </div>
                 </div>
               </form>
+              <div id="submissionMessage" style="display: none; color: green;">
+        Content submitted successfully!
+    </div>
+
+    <script>
+        function submitForm() {
+            // You can add any additional form validation logic here if needed
+
+            // Assuming the form submission is successful
+            document.getElementById('submissionMessage').style.display = 'block';
+
+            // You can also submit the form using JavaScript if needed
+            // document.getElementById('joinForm').submit();
+        }
+    </script>
             </div>
           </div>
         </div>
