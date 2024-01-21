@@ -1,0 +1,6 @@
+"(css|js|img)\/(.+?)"
+"{{asset('$1/$2')}}"
+
+
+href="(\w+)\.html"
+href="{{ route('$1') }}"
