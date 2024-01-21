@@ -496,9 +496,9 @@
                 </div>
                 <div class="col-lg-3 col-md-6">
                     <h4 class="text-white mb-3">Contact</h4>
-                    <p class="mb-2"><i class="fa fa-map-marker-alt me-3"></i>Nyarugenge, Kigali, Rwanda</p>
-                    <p class="mb-2"><i class="fa fa-phone-alt me-3"></i>+250781478050</p>
-                    <p class="mb-2"><i class="fa fa-envelope me-3"></i>urmediahub@gmail.com</p>
+                    <p class="mb-2"><i class="fa fa-map-marker-alt me-3"></i>KN 7 Ave, Kigali, Rwanda</p>
+                    <p class="mb-2"><i class="fa fa-phone-alt me-3"></i>+250 788 888 888</p>
+                    <p class="mb-2"><i class="fa fa-envelope me-3"></i>urmediahub@ur.ac.com</p>
                     <div class="d-flex pt-2">
                         <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-twitter"></i></a>
                         <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-facebook-f"></i></a>
@@ -520,11 +520,10 @@
             <div class="copyright">
                 <div class="row">
                     <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
-                        &copy; <a class="border-bottom" href="#">Your Site Name</a>, All Right Reserved.
+                        &copy; <a class="border-bottom" href="#">URMediahub</a>, All Right Reserved.
 
                         <!--/*** This template is free as long as you keep the footer author’s credit link/attribution link/backlink. If you'd like to use the template without the footer author’s credit link/attribution link/backlink, you can purchase the Credit Removal License from "https://htmlcodex.com/credit-removal". Thank you for your support. ***/-->
-                        Designed By <a class="border-bottom" href="https://htmlcodex.com">HTML Codex</a><br><br>
-                        Distributed By <a class="border-bottom" href="https://themewagon.com">ThemeWagon</a>
+                        Designed By <a class="border-bottom">Christelle&Christelle</a><br><br>
                     </div>
                     <div class="col-md-6 text-center text-md-end">
                         <div class="footer-menu">
