@@ -24,15 +24,15 @@ class FormController extends Controller
 
         ]);
 
-        // Assuming the form submission is successful
+        /*ssuming the form submission is successful
         // You can add your logic for saving data to the database here
-        $yourModel = new YourModel();
+        $yourModel = new ();
         $yourModel->field1 = $validatedData['field1'];
         $yourModel->field2 = $validatedData['field2'];
         // Set other fields accordingly
 
-        $yourModel->save();
+        $yourModel->save();*/
 
-        return redirect('/submit-form')->with('success', 'Content submitted successfully!');
+        return redirect('/joinusnow')->with('success', 'Content submitted successfully!');
     }
 }
