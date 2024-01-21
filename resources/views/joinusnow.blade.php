@@ -206,12 +206,11 @@
                   </div>
                   <div class="col-md-6">
                     <div class="form-floating">
-                      <input
-                        type="text"
+                      <select
                         class="form-control"
                         id="title"
-                        placeholder="Content Title"
-                      />
+                        aria-label="Content Title"
+                      </>
                       <label for="title">Content Title</label>
                     </div>
                   </div>

@@ -33,6 +33,6 @@ class FormController extends Controller
 
         $yourModel->save();*/
 
-        return redirect('/joinusnow')->with('success', 'Content submitted successfully!');
+        return redirect('/joinusnow.blade.php')->with('success', 'Content submitted successfully!');
     }
 }
