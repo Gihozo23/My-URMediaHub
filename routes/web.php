@@ -74,5 +74,5 @@ Route::get('/joinusnow', function () {
 Route::fallback(function () {
     return view('404');
 });
-Route::get('/joinusnow', 'FormController@showForm');
-Route::post('/joinusnow', 'FormController@submitForm');
+Route::get('/submit-form', 'FormController@showForm');
+Route::post('/submit-form', 'FormController@submitForm');
