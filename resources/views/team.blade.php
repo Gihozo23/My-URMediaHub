@@ -94,7 +94,7 @@
     <div class="container-xxl py-5">
         <div class="container">
             <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
-                <h6 class="section-title bg-white text-center text-primary px-3">Cmpus Tour</h6>
+                <h6 class="section-title bg-white text-center text-primary px-3">Campus Tour</h6>
                 <h1 class="mb-5">University life</h1>
             </div>
             <div class="row g-4">
@@ -111,8 +111,8 @@
                             </div>
                         </div>
                         <div class="text-center p-4">
-                            <h5 class="mb-0">Kambanda</h5>
-                            <small>School of ICT</small>
+                            <h6 class="mb-0">As we enter the inter-school season, the first match was a show!</h6>
+                            <small>CST-Nyarugenge</small>
                         </div>
                     </div>
                 </div>
@@ -129,8 +129,8 @@
                             </div>
                         </div>
                         <div class="text-center p-4">
-                            <h5 class="mb-0">Mutesi</h5>
-                            <small>School of Science</small>
+                            <h6 class="mb-0">From being a shy student to speaking confidently infront of a whole club</h6>
+                            <small>Debate club</small>
                         </div>
                     </div>
                 </div>
@@ -147,8 +147,8 @@
                             </div>
                         </div>
                         <div class="text-center p-4">
-                            <h5 class="mb-0">Nshimiye</h5>
-                            <small>School of Architecture</small>
+                            <h6 class="mb-0">Our two students and content managers having a getaway</h6>
+                            <small>URMedia Hub Staff</small>
                         </div>
                     </div>
                 </div>
@@ -165,8 +165,8 @@
                             </div>
                         </div>
                         <div class="text-center p-4">
-                            <h5 class="mb-0">Higiro</h5>
-                            <small>School of ICT</small>
+                            <h6 class="mb-0">Bitter sweet pictures! Our ICT students' last photo infront of KOICA building.</h6>
+                            <small>UR-Huye Campus</small>
                         </div>
                     </div>
                 </div>
