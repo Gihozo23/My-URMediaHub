@@ -134,7 +134,7 @@
             <h6 class="section-title bg-white text-center text-primary px-3">
               Get to Us
             </h6>
-            <h1 class="mb-5">Take part in the UR history</h1>
+            <h1 class="mb-5">Take part in the UR History</h1>
           </div>
           <div class="row g-4 justify-content-center">
             <div class="col-lg-8 col-md-10 wow fadeInUp" data-wow-delay="0.1s">
